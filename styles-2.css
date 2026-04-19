@@ -1,0 +1,144 @@
+/* --- Base Variables & Theme --- */
+:root {
+    --bg-main: #0d1117;
+    --bg-card: #161b22;
+    --accent-color: #00ffca; /* Neon Cyan/Green */
+    --text-main: #c9d1d9;
+}
+
+body.tech-theme {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+}
+
+.tech-font {
+    font-family: 'Fira Code', monospace;
+}
+
+.bg-dark-custom {
+    background-color: #010409 !important;
+}
+
+.text-accent {
+    color: var(--accent-color) !important;
+}
+
+.accent-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.accent-link:hover {
+    color: #fff;
+    text-shadow: 0 0 8px var(--accent-color);
+}
+
+/* --- Components --- */
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
+    padding: 4px;
+}
+
+.custom-card {
+    background-color: var(--bg-card);
+    border: 1px solid #30363d;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 20px rgba(0, 255, 202, 0.1);
+}
+
+.custom-list li {
+    margin-bottom: 8px;
+}
+
+/* --- Simple Animations --- */
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   Media Queries (Assignment Requirement 3)
+   ========================================= */
+
+/* Mobile (≤ 576px) */
+@media (max-width: 576px) {
+    /* Change Font Sizes */
+    h1.display-4 {
+        font-size: 2.2rem;
+    }
+    
+    h2.lead {
+        font-size: 1rem;
+    }
+
+    /* Change Spacing */
+    #main-header {
+        padding: 2rem 1rem !important;
+    }
+
+    .card-body {
+        padding: 1rem !important;
+    }
+
+    /* Adjust Layout element */
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* Tablet (≤ 768px) */
+@media (max-width: 768px) {
+    /* Change Font Sizes */
+    h1.display-4 {
+        font-size: 2.8rem;
+    }
+
+    /* Change Spacing - increase gap between stacked columns */
+    .row.g-4 > [class^="col-"] {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Desktop (≥ 992px) */
+@media (min-width: 992px) {
+    /* Change Font Sizes */
+    h1.display-4 {
+        font-size: 3.5rem;
+    }
+
+    /* Change Spacing - give more breathing room on large screens */
+    #main-content {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    /* Layout adjustment */
+    .profile-photo {
+        width: 180px;
+        height: 180px;
+    }
+}
